@@ -1,0 +1,9 @@
+{
+  "name": "@wealthy/api/data-access-db",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "dependencies": {
+    "@prisma/client": "^4.5.0",
+    "prisma": "^4.7.1"
+  }
+}

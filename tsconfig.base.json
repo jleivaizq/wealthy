@@ -14,7 +14,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@wealthy/api/data-access-db": [
+        "libs/api/data-access-db/src/index.ts"
+      ],
+      "@wealthy/api/generated/db-types": [
+        "libs/api/generated/db-types/src/index.ts"
+      ],
+      "@wealthy/client/generated/graphql-types": [
+        "libs/client/generated/graphql-types/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
