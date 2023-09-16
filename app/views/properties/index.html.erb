@@ -5,10 +5,62 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Properties</h1>
-    <%= link_to 'New property', new_property_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <div id="properties" class="min-w-full">
-    <%= render @properties %>
+  <div class="overflow-x-auto">
+    <table id="Properties" class="table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>m2</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @properties.each do |property| %>
+        <tr>
+          <td>
+            <div class="flex items-center space-x-3">
+              <div class="avatar">
+                <div class="mask mask-squircle w-12 h-12">
+                  <img src="https://vinayakproperties.co.in/wp-content/uploads/2022/04/flat.jpg" alt="Avatar Tailwind CSS Component"/>
+                </div>
+              </div>
+              <div>
+                <%= property.title %>
+                <br/>
+                <span class="badge badge-ghost badge-sm">Bedrooms: <%= property.bedrooms %></span>
+                <span class="badge badge-ghost badge-sm">Bathrooms: <%= property.bathrooms %></span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <%= property.meters %>
+          </td>
+          <td>
+            <%= number_to_currency(property.price, unit: "€", format: "%n %u") %>
+          </td>
+          <th>
+            <button class="btn btn-ghost btn-xs">
+              <%= link_to 'Details', property %>
+            </button>
+          </th>
+        </tr>
+      <% end %>
+
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="3">
+          <div class="mt-6">
+            <%= link_to 'New property',
+                        new_property_path,
+                        class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+          </div>
+        </td>
+        <td>
+      </tr>
+      </tfoot>
+    </table>
   </div>
 </div>
