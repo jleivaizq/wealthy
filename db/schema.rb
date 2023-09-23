@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_03_190933) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_171315) do
   create_table "properties", force: :cascade do |t|
     t.string "title"
     t.string "address"
     t.string "city"
     t.string "postal_code"
-    t.decimal "price"
     t.decimal "meters"
     t.decimal "bedrooms"
     t.decimal "bathrooms"
@@ -25,6 +24,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_03_190933) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "initial_price"
   end
 
+  create_table "records", force: :cascade do |t|
+    t.text "comment"
+    t.integer "property_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "price"
+    t.index ["property_id"], name: "index_records_on_property_id"
+  end
+
+  add_foreign_key "records", "properties"
 end
