@@ -17,26 +17,8 @@
       </thead>
       <tbody>
       <% @records.each do |record| %>
-        <tr>
-          <td>
-            <%= record.property_id%>
-          </td>
-          <td>
-            <div class="flex items-center space-x-3">
-                <%= record.comment%>
-            </div>
-          </td>
-          <td>
-            <%= number_to_currency(record.price, unit: "€", format: "%n %u") %>
-          </td>
-          <th>
-            <button class="btn btn-ghost btn-xs">
-              <%= link_to 'Details', record %>
-            </button>
-          </th>
-        </tr>
+        <%= render record %>
       <% end %>
-
       </tbody>
     </table>
   </div>

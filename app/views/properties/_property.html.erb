@@ -54,6 +54,32 @@
     <%= property.comments %>
   </p>
 
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Records:</strong>
+  </p>
+
+  <div class="overflow-x-auto">
+    <table id="Properties" class="table">
+      <thead>
+      <tr>
+        <th>Comment</th>
+        <th>Price updated</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% property.records.each do |record| %>
+        <%= render record %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
   <% if action_name != "show" %>
     <%= link_to "Show this property", property, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this property', edit_property_path(property), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
