@@ -1,59 +1,59 @@
-<div id="<%= dom_id property %>">
-  <p class="my-5">
+<div class="flex flex-wrap" id="<%= dom_id property %>">
+  <div class="basis-1/2">
     <strong class="block font-medium mb-1">Title:</strong>
-    <%= property.title %>
-  </p>
+    <a href="<%= property.link %>"><%= property.title %></a>
+  </div>
 
-  <p class="my-5">
+  <div class="basis-1/2">
     <strong class="block font-medium mb-1">Address:</strong>
-    <%= property.address %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">City:</strong>
-    <%= property.city %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Postal code:</strong>
+    <%= property.address %>,
+    <%= property.city %>,
     <%= property.postal_code %>
-  </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= property.initial_price %>
-  </p>
+  <div class="basis-1/5">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Price:</strong>
+      <%= property.initial_price %>
+    </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Meters:</strong>
-    <%= property.meters %>
-  </p>
+  <div class="basis-1/5">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Meters:</strong>
+      <%= property.meters %>
+    </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Bedrooms:</strong>
-    <%= property.bedrooms %>
-  </p>
+  <div class="basis-1/5">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Bedrooms:</strong>
+      <%= property.bedrooms %>
+    </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Bathrooms:</strong>
-    <%= property.bathrooms %>
-  </p>
+  <div class="basis-1/5">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Bathrooms:</strong>
+      <%= property.bathrooms %>
+    </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Rating:</strong>
-    <%= property.rating %>
-  </p>
+  <div class="basis-1/5">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Rating:</strong>
+      <%= property.rating %>
+    </p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Link:</strong>
-    <%= property.link %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Comments:</strong>
-    <%= property.comments %>
-  </p>
-
+  <div class="basis-2/2">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Comments:</strong>
+      <%= property.comments %>
+    </p>
+  </div>
+</div>
+<div class="basis-1">
   <p class="my-5">
     <strong class="block font-medium mb-1">Records:</strong>
   </p>
@@ -73,16 +73,16 @@
       </tbody>
     </table>
   </div>
-</div>
 
-<div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
+  <div class="w-full">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
 
-  <% if action_name != "show" %>
-    <%= link_to "Show this property", property, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this property', edit_property_path(property), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+    <% if action_name != "show" %>
+      <%= link_to "Show this property", property, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to 'Edit this property', edit_property_path(property), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <hr class="mt-6">
+    <% end %>
+  </div>
 </div>
