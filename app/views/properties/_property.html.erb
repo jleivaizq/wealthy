@@ -1,20 +1,24 @@
 <div class="flex flex-wrap" id="<%= dom_id property %>">
-  <div class="basis-1/2">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <a href="<%= property.link %>"><%= property.title %></a>
-  </div>
 
-  <div class="basis-1/2">
-    <strong class="block font-medium mb-1">Address:</strong>
-    <%= property.address %>,
-    <%= property.city %>,
-    <%= property.postal_code %>
+  <div class="basis-2/3">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Title:</strong>
+      <a href="<%= property.link %>"><%= property.title %></a>
+    </p>
   </div>
-
-  <div class="basis-1/5">
+  <div class="basis-1/3">
     <p class="my-5">
       <strong class="block font-medium mb-1">Price:</strong>
       <%= property.initial_price %>
+    </p>
+  </div>
+
+  <div class="basis-2/5">
+    <p class="my-5">
+      <strong class="block font-medium mb-1">Address:</strong>
+      <%= property.address %>,
+      <%= property.city %>,
+      <%= property.postal_code %>
     </p>
   </div>
 
@@ -36,13 +40,6 @@
     <p class="my-5">
       <strong class="block font-medium mb-1">Bathrooms:</strong>
       <%= property.bathrooms %>
-    </p>
-  </div>
-
-  <div class="basis-1/5">
-    <p class="my-5">
-      <strong class="block font-medium mb-1">Rating:</strong>
-      <%= property.rating %>
     </p>
   </div>
 
