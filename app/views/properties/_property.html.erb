@@ -59,6 +59,7 @@
     <table id="Properties" class="table">
       <thead>
       <tr>
+        <th>Date</th>
         <th>Comment</th>
         <th>Price updated</th>
       </tr>
@@ -70,6 +71,10 @@
       </tbody>
     </table>
   </div>
+
+  <%= line_chart({"2021-01-01" => 600000, "2021-02-01" => 590000, "2021-03-01" => 550000, "2021-04-01" => 525000}) %>
+
+  <%#= line_chart(property.records.map { |record| {record.created_at.strftime("%Y-%m-%d") => record.price} }) %>
 
   <div class="w-full">
     <% if notice.present? %>
